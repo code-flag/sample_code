@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CentralPay Integration Kit</title>
+</head>
+<body>
+  <div id="wrapper"></div>
+  <button type="button" onclick="makePayment()" id="button" class="payBtn">Pay Now</button>
+<script>
+  function makePayment(){ 
+    CentralpayCheckout({
+      secretKey: 'DDC7C109531D71C1F4355FB83B612B76',
+      amount: "5000",
+      currency: "566",
+      merchantId: "NIBSS0000000027",
+      productDescription: "phone",
+      productId: "605087",
+      responseUrl: "http://127.0.0.1:8080/CentralPayMerchant/response.jsp",
+      transactionId: "1232323",
+      logo: 'https://res.cloudinary.com/dutbqk0ux/image/upload/v1627032218/timileinlogo.png',
+      paymentMode: 'Account, Card, NQR, mCash',
+    })
+}
+</script>
+<script src="https://cdn.jsdelivr.net/gh/open-nibss/CentralPayV2-JS-Integration-KIt@dev/checkout.testcpay.v.1.0.1.js"></script>
+</body>
+</html> 
